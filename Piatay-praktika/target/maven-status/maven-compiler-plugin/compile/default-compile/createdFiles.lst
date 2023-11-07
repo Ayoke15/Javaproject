@@ -1,0 +1,17 @@
+service\WashingMachineService.class
+model\Client.class
+service\TelephoneService.class
+model\WashingMachine.class
+repository\BookRepository.class
+service\BookService.class
+controller\WashingMachineController.class
+repository\WashingMachineRepository.class
+controller\TelephoneController.class
+repository\TelephoneRepository.class
+controller\BookController.class
+service\ClientService.class
+com\example\Piatay\praktika\PiatayPraktikaApplication.class
+model\Book.class
+model\Telephone.class
+controller\ClientController.class
+repository\ClientRepository.class

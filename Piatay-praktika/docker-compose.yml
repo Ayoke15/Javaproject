@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+
+  app-server:
+    container_name: app-server
+    build:
+      context: . # Путь к папке, где находится Dockerfile для приложения
+    environment:
+      - DB_DEFAULT_PORT=3306
+    depends_on:
+      - app-db
+    ports:
+      - "8080:8080"
+
+  app-db:
+    container_name: app-db
+    build:
+      context: ./database # Путь к папке, где находится Dockerfile для базы данных
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=your_database_name
+      - MYSQL_USER=your_username
+      - MYSQL_PASSWORD=your_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
